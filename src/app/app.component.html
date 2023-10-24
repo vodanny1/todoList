@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="contentDiv">
+    <form [formGroup]="todoForm" (ngSubmit)="onAddToList()">
+      <div class="addTodo">
+        <h1>To do list</h1>
+        <label class="sectionLabel" for="todo">Objective</label>
+        <input class="todoInput" type="text" id="todo" formControlName="todo" />
+        <span
+          class="help-block"
+          *ngIf="!todoForm.get('todo').valid && todoForm.get('todo').touched"
+          >Field cannot be blank!</span
+        >
+      </div>
+
+      <button
+        class="submitBtn addBtn"
+        type="submit"
+        [disabled]="!todoForm.get('todo').valid"
+        [style]="
+          !todoForm.get('todo').valid
+            ? 'cursor: not-allowed; background-color: #79b7f4'
+            : ''
+        "
+      >
+        Add to list
+      </button>
+    </form>
+
+    <div class="resultDiv">
+      <form [formGroup]="listForm" (ngSubmit)="onSubmit()">
+        <div class="outputDiv">
+          <button
+            class="submitBtn completeBtn"
+            type="submit"
+            *ngIf="isCompleteMode"
+          >
+            Mark as completed
+          </button>
+          <button
+            class="submitBtn deleteBtn"
+            type="submit"
+            *ngIf="!isCompleteMode"
+          >
+            Delete selection
+          </button>
+          <div class="switchModeDiv">
+            <label class="switch" for="switch"
+              >Switch to {{ isCompleteMode ? "Delete" : "Complete" }}</label
+            >
+            <input
+              type="checkbox"
+              name="switch"
+              id="switch"
+              (change)="onSwitchMode()"
+            />
+          </div>
+
+          <div class="doubleListDiv">
+            <div class="taskDiv">
+              <label class="sectionLabel">Tasks</label>
+              <div class="item" *ngFor="let item of todoList">
+                <input
+                  type="checkbox"
+                  name="item"
+                  id="{{ item.id }}"
+                  (change)="onChange(item)"
+                />
+                <label
+                  class="resultLabel"
+                  for="{{ item.id }}"
+                  [style]="item.style"
+                >
+                  {{ item.description }}
+                </label>
+              </div>
+            </div>
+
+            <div class="completedDiv" *ngIf="completedList.length > 0">
+              <label class="sectionLabel">Completed</label>
+              <div class="item" *ngFor="let item of completedList">
+                <label class="resultLabel" [style]="item.style">
+                  {{ item.description }}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

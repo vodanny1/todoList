@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
+
+.contentDiv {
+  min-width: 50%;
+}
+
+.addTodo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 8rem;
+  margin-bottom: 20px;
+}
+
+.sectionLabel {
+  font-size: 2em;
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+  border-radius: 4px;
+}
+
+.todoInput {
+  height: 30px;
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* CSS */
+.submitBtn {
+  display: block;
+  width: 100%;
+
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  /* font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif; */
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.addBtn {
+  background-color: #338ae2;
+}
+
+.addBtn:hover,
+.addBtn:focus {
+  background-color: #79b7f4;
+}
+
+.buttonDiv {
+  display: flex;
+}
+
+/* .buttonDiv button {
+  border-radius: 0;
+}
+
+.buttonDiv .completeBtn {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.buttonDiv .deleteBtn {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+} */
+
+.deleteBtn {
+  background-color: #e12e2e;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.deleteBtn:hover,
+.deleteBtn:focus {
+  background-color: #f46e6e;
+}
+
+.completeBtn {
+  background-color: #1ad883;
+}
+
+.completeBtn:hover,
+.completeBtn:focus {
+  background-color: #98fbcf;
+}
+
+.resultDiv {
+  margin-top: 30px;
+}
+
+.outputDiv {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+.outputLabel {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.resultLabel {
+  margin-left: 10px;
+  font-size: 1.5em;
+
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+
+  color: rgb(120, 108, 108);
+}
+
+.item {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.switchModeDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.doubleListDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.switch {
+  cursor: pointer;
+}
